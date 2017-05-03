@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private Spinner spinerFrom;
     private Spinner spinerTo;
     private EditText editText;
-    private Button btnFavorite, btnHistory;
+    private Button btnFavorite, btnHistory, imageBtn;
     private FloatingActionButton floatingActionButton;
     private String[] langArray;
     private String langFrom;
@@ -66,8 +66,18 @@ public class MainActivity extends AppCompatActivity {
         btnHistory.setOnClickListener(changeActivityBtnListener);
         btnFavorite.setOnClickListener(changeActivityBtnListener);
 
+        imageBtn = (Button) findViewById(R.id.imageBtn);
+        imageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int i = spinerFrom.getSelectedItemPosition();
+                spinerFrom.setSelection(spinerTo.getSelectedItemPosition());
+                spinerTo.setSelection(i);
+            }
+        });
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, langArray);
-      // попробовать сделать спинер
+        // попробовать сделать спинер
         spinerFrom.setAdapter(adapter);
         spinerTo.setAdapter(adapter);
         spinerFrom.setSelection(20);
@@ -75,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         spinerFrom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-            //    Toast.makeText(getApplicationContext(), langArray[position], Toast.LENGTH_LONG).show();
+                //    Toast.makeText(getApplicationContext(), langArray[position], Toast.LENGTH_LONG).show();
                 langFrom = mapLanguages.get(langArray[position]);
                 //
                 addListener.setLangFrom(langFrom);
@@ -90,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         spinerTo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-              //  Toast.makeText(getApplicationContext(), langArray[position], Toast.LENGTH_LONG).show();
+                //  Toast.makeText(getApplicationContext(), langArray[position], Toast.LENGTH_LONG).show();
                 langTo = mapLanguages.get(langArray[position]);
                 addListener.setLangTo(langTo);
                 startTranslate();

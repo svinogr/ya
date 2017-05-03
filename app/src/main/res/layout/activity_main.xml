@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorYa"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity"
-    android:background="@color/colorYa">
+    tools:context=".MainActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,21 +19,21 @@
         android:background="@color/colorYa">
 
         <Button
+            android:id="@+id/bntFavorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/bntFavorite"
-            android:id="@+id/bntFavorite"
-            android:background="@color/btnColor" />
+            android:background="@color/btnColor"
+            android:text="@string/bntFavorite" />
 
         <Button
 
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/btnHistory"
             android:id="@+id/btnHistory"
-            android:background="@color/btnColor" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/btnColor"
+            android:text="@string/btnHistory" />
     </LinearLayout>
 
     <LinearLayout
@@ -48,12 +49,14 @@
             android:layout_height="40dp"
             android:layout_weight="2" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:src="@drawable/ic_compare_arrows_black_24dp"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1" />
+        <Button
+            android:layout_marginLeft="12dp"
+            android:id="@+id/imageBtn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@color/btnColor"
+            android:layout_gravity="top"
+            android:drawableLeft="@drawable/ic_compare_arrows_black_24dp" />
 
         <Spinner
             android:id="@+id/spinner2"
@@ -70,9 +73,9 @@
         android:background="@color/colorYa">
 
         <EditText
+            android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText"
             android:focusable="true"
             android:hint="введите текст"
             android:textAlignment="center" />
@@ -86,11 +89,12 @@
 
 
         <TextView
+            android:id="@+id/translateText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/translateText"
             android:textAlignment="center" />
     </LinearLayout>
+
     <com.melnykov.fab.FloatingActionButton
         android:id="@+id/fabAddBtn"
         android:layout_width="wrap_content"
@@ -100,9 +104,7 @@
         android:src="@drawable/ic_add_black_24dp"
         fab:fab_colorNormal="@color/btnColor"
         fab:fab_colorPressed="@color/colorPrimaryDark"
-        fab:fab_colorRipple="@color/colorPrimaryDark"/>
-
-
+        fab:fab_colorRipple="@color/colorPrimaryDark" />
 
 
 </LinearLayout>
