@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ya</string>
+    <string name="btnAdd">добавить</string>
+    <string name="bntFavorite">избранное</string>
+    <string name="btnHistory">история</string>
+    <string name="messageToAddFavorite">слово добавлено в избраное</string>
+    <string name="messageToNotAddFavorite">не введено слово для перевода</string>
+</resources>
