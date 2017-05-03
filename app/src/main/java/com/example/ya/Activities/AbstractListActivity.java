@@ -30,7 +30,6 @@ public abstract class AbstractListActivity extends AppCompatActivity {
 
     protected void initialiseViews() {
         listView = (ListView) findViewById(R.id.listView);
-        System.out.println("иницивл вью");
         initialiseDataBase();
 
         String[] from = new String[]{"_id"};

@@ -4,7 +4,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 
-public class FavoriteActivity extends AbstractListActivity {
+public class FavoriteActivity extends AbstractListActivityRecycler {
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
