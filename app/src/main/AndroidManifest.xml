@@ -27,9 +27,7 @@
             android:name=".Activities.HistoryActivity">
 
         </activity>
-        <activity android:name=".Activities.TTy">
-        </activity>
-       <!-- <activity android:name=".Activities.HistoryActivity"></activity>-->
+        <!-- <activity android:name=".Activities.HistoryActivity"></activity>-->
 
     </application>
 

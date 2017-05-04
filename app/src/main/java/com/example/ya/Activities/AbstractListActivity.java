@@ -21,7 +21,6 @@ public abstract class AbstractListActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_list_view);
         initialiseViews();
     }
@@ -54,6 +53,5 @@ public abstract class AbstractListActivity extends AppCompatActivity {
         dataBase = new DataBase(this);
         dataBase.open();
     }
-
 
 }

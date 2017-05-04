@@ -1,6 +1,5 @@
 package com.example.ya.Activities.Listeners;
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.view.View;

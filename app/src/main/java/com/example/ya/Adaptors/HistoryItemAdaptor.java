@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.example.ya.R;
 
-
 public class HistoryItemAdaptor extends SimpleCursorAdapter {
 
     private int layout;
@@ -23,9 +22,8 @@ public class HistoryItemAdaptor extends SimpleCursorAdapter {
 
     @Override
     public View newView(Context _context, Cursor cursor, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) _context.getSystemService(_context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) _context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(layout, parent, false);
-        //if (cursor.getString(cursor.getColumnIndex("searchWord")).equals("")) {
         return view;
 
     }

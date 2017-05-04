@@ -21,9 +21,6 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Сергей on 26.04.2017.
- */
 public class MyTaskTranslate extends AsyncTask<String, Void, String> {
     private final static String KEY = "&key=trnsl.1.1.20170425T181936Z.b193666944ee4eaa.9594841bf13a2777a5f254b1c6cacf4482c34595";
     private final static String URLGETLANG = "https://translate.yandex.net/api/v1.5/tr.json/translate?lang=";
@@ -41,9 +38,6 @@ public class MyTaskTranslate extends AsyncTask<String, Void, String> {
         String out=null;
         DefaultHttpClient httpClient = new DefaultHttpClient();
         HttpPost httpPost = new HttpPost(URLGETLANG + pairLanguages + KEY);
-        //httpPost.addHeader("Accept", "application/json");
-        //   httpPost.addHeader("Content-Type: application/x-www-form-urlencoded", "charset=utf-8");
-        //   httpPost.addHeader("Accept-Charset: windows-1251,utf-8");
         try {
             httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairList, HTTP.UTF_8));
         } catch (UnsupportedEncodingException e) {

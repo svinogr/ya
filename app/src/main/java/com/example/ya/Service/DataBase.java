@@ -1,6 +1,5 @@
 package com.example.ya.Service;
 
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -9,12 +8,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.ya.Entity.HistoryItem;
 
-public class DataBase
-{
+public class DataBase {
     private static final String DB_NAME = "db";
     private static final int DB_VERSION = 1;
     private static final String DB_TABLE = "history";
-
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_SEARCH_WORD = "searchWord";
     public static final String COLUMN_SEARCH_LANG = "searchLang";
@@ -29,7 +26,7 @@ public class DataBase
                     COLUMN_SEARCH_LANG + " text," +
                     COLUMN_TRANSLATED_WORD + " text," +
                     COLUMN_TRANSLATED_LANG + " text," +
-                    COLUMN_FAVORITE + " integer"+");";
+                    COLUMN_FAVORITE + " integer" + ");";
     private final Context mCtx;
 
 
@@ -48,14 +45,15 @@ public class DataBase
 
     // закрыть подключение
     public void close() {
-        if (mDBHelper!=null) mDBHelper.close();
+        if (mDBHelper != null) mDBHelper.close();
     }
 
     // получить все данные из таблицы DB_TABLE
     public Cursor getAllData() {
         return mDB.query(DB_TABLE, null, null, null, null, null, null);
     }
-    public Cursor getAllDataWithoutEmpty(){
+
+    public Cursor getAllDataWithoutEmpty() {
         return mDB.rawQuery("select * from history where searchWord!='' ", null);
 
     }
@@ -69,7 +67,6 @@ public class DataBase
         cv.put(COLUMN_TRANSLATED_LANG, historyItem.getTranslatedLang());
         cv.put(COLUMN_FAVORITE, historyItem.getFavorite());
         long u = mDB.insert(DB_TABLE, null, cv);
-        System.out.println("сохраняю "+u);
     }
 
     // удалить запись из DB_TABLE
@@ -89,13 +86,6 @@ public class DataBase
         @Override
         public void onCreate(SQLiteDatabase db) {
             db.execSQL(DB_CREATE);
-
-          /*  ContentValues cv = new ContentValues();
-            for (int i = 1; i < 5; i++) {
-                cv.put(COLUMN_TXT, "sometext " + i);
-                cv.put(COLUMN_IMG, R.drawable.ic_launcher);
-                db.insert(DB_TABLE, null, cv);
-            }*/
         }
 
         @Override
